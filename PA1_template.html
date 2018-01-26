@@ -1,0 +1,892 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>Reproducible Research: Peer Assessment 1</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;}
+h2
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h3
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h4
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h5
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;
+	font-weight:normal;
+	font-style:italic;}
+h6
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;
+	font-weight:normal;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-link:"Caption Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-style:italic;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:15.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;
+	font-weight:bold;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:#4F81BD;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoBibliography, li.MsoBibliography, div.MsoBibliography
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#365F91;}
+p.FirstParagraph, li.FirstParagraph, div.FirstParagraph
+	{mso-style-name:"First Paragraph";
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Compact, li.Compact, div.Compact
+	{mso-style-name:Compact;
+	margin-top:1.8pt;
+	margin-right:0in;
+	margin-bottom:1.8pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Author, li.Author, div.Author
+	{mso-style-name:Author;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Abstract, li.Abstract, div.Abstract
+	{mso-style-name:Abstract;
+	margin-top:15.0pt;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Cambria","serif";}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+p.Definition, li.Definition, div.Definition
+	{mso-style-name:Definition;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{mso-style-name:"Table Caption";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-style:italic;}
+p.ImageCaption, li.ImageCaption, div.ImageCaption
+	{mso-style-name:"Image Caption";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-style:italic;}
+p.Figure, li.Figure, div.Figure
+	{mso-style-name:Figure;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.FigurewithCaption, li.FigurewithCaption, div.FigurewithCaption
+	{mso-style-name:"Figure with Caption";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+span.CaptionChar
+	{mso-style-name:"Caption Char";
+	mso-style-link:Caption;}
+span.VerbatimChar
+	{mso-style-name:"Verbatim Char";
+	mso-style-link:"Source Code";
+	font-family:Consolas;}
+p.SourceCode, li.SourceCode, div.SourceCode
+	{mso-style-name:"Source Code";
+	mso-style-link:"Verbatim Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	background:#F8F8F8;
+	word-break:break-all;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+span.KeywordTok
+	{mso-style-name:KeywordTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.DataTypeTok
+	{mso-style-name:DataTypeTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;}
+span.DecValTok
+	{mso-style-name:DecValTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.BaseNTok
+	{mso-style-name:BaseNTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.FloatTok
+	{mso-style-name:FloatTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.ConstantTok
+	{mso-style-name:ConstantTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.CharTok
+	{mso-style-name:CharTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.SpecialCharTok
+	{mso-style-name:SpecialCharTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.StringTok
+	{mso-style-name:StringTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.VerbatimStringTok
+	{mso-style-name:VerbatimStringTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.SpecialStringTok
+	{mso-style-name:SpecialStringTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.ImportTok
+	{mso-style-name:ImportTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.CommentTok
+	{mso-style-name:CommentTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-style:italic;}
+span.DocumentationTok
+	{mso-style-name:DocumentationTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.AnnotationTok
+	{mso-style-name:AnnotationTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.CommentVarTok
+	{mso-style-name:CommentVarTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.OtherTok
+	{mso-style-name:OtherTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;}
+span.FunctionTok
+	{mso-style-name:FunctionTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.VariableTok
+	{mso-style-name:VariableTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.ControlFlowTok
+	{mso-style-name:ControlFlowTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.OperatorTok
+	{mso-style-name:OperatorTok;
+	font-family:Consolas;
+	color:#CE5C00;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.BuiltInTok
+	{mso-style-name:BuiltInTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.ExtensionTok
+	{mso-style-name:ExtensionTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.PreprocessorTok
+	{mso-style-name:PreprocessorTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-style:italic;}
+span.AttributeTok
+	{mso-style-name:AttributeTok;
+	font-family:Consolas;
+	color:#C4A000;
+	background:#F8F8F8;}
+span.RegionMarkerTok
+	{mso-style-name:RegionMarkerTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.InformationTok
+	{mso-style-name:InformationTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.WarningTok
+	{mso-style-name:WarningTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.AlertTok
+	{mso-style-name:AlertTok;
+	font-family:Consolas;
+	color:#EF2929;
+	background:#F8F8F8;}
+span.ErrorTok
+	{mso-style-name:ErrorTok;
+	font-family:Consolas;
+	color:#A40000;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.NormalTok
+	{mso-style-name:NormalTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Cambria","serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#4F81BD" vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoTitle>Reproducible Research: Peer Assessment 1</p>
+
+<h2><a name=loading-and-preprocessing-the-data></a>Loading and preprocessing
+the data</h2>
+
+<p class=FirstParagraph>Read data and store data frame</p>
+
+<p class=SourceCode><span class=NormalTok><span style='font-size:11.0pt'>data
+&lt;-</span></span><span class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>read.csv</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;activity.csv&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span><br>
+<span class=KeywordTok><span style='font-size:11.0pt'>library</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(ggplot2)</span></span></p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>##
+Warning: package 'ggplot2' was built under R version 3.4.3</span></span></p>
+
+<h2><a name=what-is-mean-total-number-of-steps-taken></a>What is mean total
+number of steps taken per day?</h2>
+
+<h4>Make a histogram of the total number of steps taken each day</h4>
+
+<p class=SourceCode><span class=NormalTok><span style='font-size:11.0pt'>total.steps
+&lt;-</span></span><span class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>tapply</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>steps, data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>date, </span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>                      </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>FUN =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> sum, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>na.rm =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=OtherTok><span style='font-size:11.0pt'>TRUE</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span><br>
+<span class=KeywordTok><span style='font-size:11.0pt'>hist</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(total.steps, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>xlab =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Total Steps per Day&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>breaks =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=DecValTok><span style='font-size:11.0pt'>20</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span></p>
+
+<p class=FirstParagraph><img width=485 height=388
+src="PA1_template_files/image001.png"></p>
+
+<h4><a name=calculate-and-report-the-mean-and-median></a>Calculate and report
+the mean and median total number of steps taken per day</h4>
+
+<p class=SourceCode><span class=KeywordTok><span style='font-size:11.0pt'>mean</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(total.steps, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>na.rm=</span></span><span
+class=OtherTok><span style='font-size:11.0pt'>TRUE</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span></p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>##
+[1] 9354.23</span></span></p>
+
+<p class=SourceCode><span class=KeywordTok><span style='font-size:11.0pt'>median</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(total.steps, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>na.rm=</span></span><span
+class=OtherTok><span style='font-size:11.0pt'>TRUE</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span></p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>##
+[1] 10395</span></span></p>
+
+<h2><a name=what-is-the-average-daily-activity-patte></a>What is the average
+daily activity pattern?</h2>
+
+<h4><a name=make-a-time-series-plot-i.e.type-l-of-th></a>Make a time series
+plot (i.e.&nbsp;type = “l”) of the 5-minute interval (x-axisstr) and the
+average number of steps taken, averaged across all days (y-axis)</h4>
+
+<p class=SourceCode><span class=KeywordTok><span style='font-size:11.0pt'>library</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(ggplot2)</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>averages &lt;-</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>aggregate</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>x =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>list</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>steps =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>steps), </span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>                      </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>by =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>list</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>interval =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>interval), </span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>                      </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>FUN =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> mean, </span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>                      </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>na.rm =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=OtherTok><span style='font-size:11.0pt'>TRUE</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span><br>
+<span class=KeywordTok><span style='font-size:11.0pt'>ggplot</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>data =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> averages, </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>aes</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>x =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> interval, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>y =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> steps)) </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>+</span></span><br>
+<span class=KeywordTok><span style='font-size:11.0pt'>geom_line</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>()  </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>+</span></span><br>
+<span class=KeywordTok><span style='font-size:11.0pt'>xlab</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;5-minute interval&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>) </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>+</span></span><br>
+<span class=KeywordTok><span style='font-size:11.0pt'>ylab</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;average number of steps
+taken&quot;</span></span><span class=NormalTok><span style='font-size:11.0pt'>)</span></span></p>
+
+<p class=FirstParagraph><img width=485 height=388
+src="PA1_template_files/image002.png"></p>
+
+<h4><a name=which-5-minute-interval-on-average-acros></a>Which 5-minute
+interval, on average across all the days in the dataset, contains the maximum
+number of steps?</h4>
+
+<p class=SourceCode><span class=NormalTok><span style='font-size:11.0pt'>averages[</span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>which.max</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(averages</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>steps), ]</span></span></p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>##    
+interval    steps</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## 104      835
+206.1698</span></span></p>
+
+<h2><a name=imputing-missing-values></a>Imputing missing values</h2>
+
+<h4><a name=calculate-and-report-the-total-number-of></a>Calculate and report
+the total number of missing values in the dataset (i.e.&nbsp;the total number
+of rows with NAs)</h4>
+
+<p class=SourceCode><span class=KeywordTok><span style='font-size:11.0pt'>table</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>is.na</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>steps))</span></span></p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>## </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## FALSE  TRUE </span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>## 15264  2304</span></span></p>
+
+<h4><a name=devise-a-strategy-for-filling-in-all-of-></a>Devise a strategy for
+filling in all of the missing values in the dataset. The strategy does not need
+to be sophisticated. For example, you could use the mean/median for that day,
+or the mean for that 5-minute interval, etc.</h4>
+
+<p class=FirstParagraph>Replace each missing value with the mean value of its
+5-minute interval</p>
+
+<p class=SourceCode><span class=NormalTok><span style='font-size:11.0pt'>fill.value
+&lt;-</span></span><span class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=ControlFlowTok><span style='font-size:11.0pt'>function</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(steps, interval) {</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>  filled &lt;-</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=OtherTok><span style='font-size:11.0pt'>NA</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>  </span></span><span
+class=ControlFlowTok><span style='font-size:11.0pt'>if</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> (</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>!</span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>is.na</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(steps)) </span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>    filled &lt;-</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>c</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(steps) </span></span><span
+class=ControlFlowTok><span style='font-size:11.0pt'>else</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> filled &lt;-</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(averages[averages</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>interval </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>==</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=NormalTok><span style='font-size:11.0pt'>interval, </span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;steps&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>])</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>    </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>return</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(filled)</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>}</span></span></p>
+
+<h4><a name=create-a-new-dataset-that-is-equal-to-th></a>Create a new dataset
+that is equal to the original dataset but with the missing data filled in.</h4>
+
+<p class=SourceCode><span class=NormalTok><span style='font-size:11.0pt'>filled.data
+&lt;-</span></span><span class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=NormalTok><span style='font-size:11.0pt'>data</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>steps &lt;-</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>mapply</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(fill.value, filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>steps, filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>interval)</span></span></p>
+
+<h4><a name=make-a-histogram-of-the-total-number-of-></a>Make a histogram of
+the total number of steps taken each day and Calculate and report the mean and
+median total number of steps taken per day.</h4>
+
+<p class=SourceCode><span class=NormalTok><span style='font-size:11.0pt'>total.steps.filled
+&lt;-</span></span><span class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>tapply</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>steps, filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>date, </span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>                      </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>FUN =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> sum)</span></span><br>
+<span class=KeywordTok><span style='font-size:11.0pt'>hist</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(total.steps.filled, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>xlab =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Total Steps per Day (with
+filled data)&quot;</span></span><span class=NormalTok><span style='font-size:
+11.0pt'>, </span></span><span class=DataTypeTok><span style='font-size:11.0pt'>breaks
+=</span></span><span class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=DecValTok><span style='font-size:11.0pt'>20</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span></p>
+
+<p class=FirstParagraph><img width=485 height=388
+src="PA1_template_files/image003.png"></p>
+
+<h3><a name=do-these-values-differ-from-the-estimate></a>Do these values differ
+from the estimates from the first part of the assignment? What is the impact of
+imputing missing data on the estimates of the total daily number of steps?</h3>
+
+<p class=SourceCode><span class=KeywordTok><span style='font-size:11.0pt'>mean</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(total.steps.filled)</span></span></p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>##
+[1] 10766.19</span></span></p>
+
+<p class=SourceCode><span class=KeywordTok><span style='font-size:11.0pt'>median</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(total.steps.filled)</span></span></p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>##
+[1] 10766.19</span></span></p>
+
+<h2><a name=are-there-differences-in-activity-patter></a>Are there differences
+in activity patterns between weekdays and weekends?</h2>
+
+<h4><a name=create-a-new-factor-variable-in-the-data></a>Create a new factor
+variable in the dataset with two levels – “weekday” and “weekend” indicating
+whether a given date is a weekday or weekend day.</h4>
+
+<p class=SourceCode><span class=NormalTok><span style='font-size:11.0pt'>weekday.or.weekend
+&lt;-</span></span><span class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=ControlFlowTok><span style='font-size:11.0pt'>function</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(date) {</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>  day &lt;-</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>weekdays</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(date)</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>  </span></span><span
+class=ControlFlowTok><span style='font-size:11.0pt'>if</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> (day </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>%in%</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>c</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Monday&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>, </span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Tuesday&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>, </span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Wednesday&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>, </span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Thursday&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>, </span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Friday&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)) </span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>    </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>return</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;weekday&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>) </span></span><span
+class=ControlFlowTok><span style='font-size:11.0pt'>else</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=ControlFlowTok><span style='font-size:11.0pt'>if</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> (day </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>%in%</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>c</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Saturday&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>, </span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Sunday&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)) </span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>      </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>return</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;weekend&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>) </span></span><span
+class=ControlFlowTok><span style='font-size:11.0pt'>else</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>stop</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;invalid date&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>}</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>date &lt;-</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>as.Date</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>date)</span></span><br>
+<span class=NormalTok><span style='font-size:11.0pt'>filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>day &lt;-</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>sapply</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(filled.data</span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>$</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>date, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>FUN =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> weekday.or.weekend)</span></span></p>
+
+<h4><a name=make-a-panel-plot-containing-a-time-seri></a>Make a panel plot
+containing a time series plot (i.e.&nbsp;type = “l”) of the 5-minute interval
+(x-axis) and the average number of steps taken, averaged across all weekday
+days or weekend days (y-axis).</h4>
+
+<p class=SourceCode><span class=NormalTok><span style='font-size:11.0pt'>averages
+&lt;-</span></span><span class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>aggregate</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(steps </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>~</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=NormalTok><span style='font-size:11.0pt'>interval </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>+</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=NormalTok><span style='font-size:11.0pt'>day, </span></span><span
+class=DataTypeTok><span style='font-size:11.0pt'>data =</span></span><span
+class=NormalTok><span style='font-size:11.0pt'> filled.data, mean)</span></span><br>
+<span class=KeywordTok><span style='font-size:11.0pt'>ggplot</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(averages, </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>aes</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(interval, steps)) </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>+</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>geom_line</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>() </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>+</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>facet_grid</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(day </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>~</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=NormalTok><span style='font-size:11.0pt'>.) </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>+</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><br>
+<span class=StringTok><span style='font-size:11.0pt'>  </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>xlab</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;5-minute interval&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>) </span></span><span
+class=OperatorTok><span style='font-size:11.0pt'>+</span></span><span
+class=StringTok><span style='font-size:11.0pt'> </span></span><span
+class=KeywordTok><span style='font-size:11.0pt'>ylab</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>(</span></span><span
+class=StringTok><span style='font-size:11.0pt'>&quot;Number of steps&quot;</span></span><span
+class=NormalTok><span style='font-size:11.0pt'>)</span></span></p>
+
+<p class=FirstParagraph><img width=485 height=388 id=Picture
+src="PA1_template_files/image004.png"></p>
+
+</div>
+
+</body>
+
+</html>
