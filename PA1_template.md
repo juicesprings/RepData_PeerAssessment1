@@ -20,7 +20,7 @@ total.steps <- tapply(data$steps, data$date,
                       FUN = sum, na.rm = TRUE)
 hist(total.steps, xlab = "Total Steps per Day", breaks = 20)
 ```
-
+![plot of chunk unnamed-chunk-1](PA1_template_files/image001.png) 
 
 #### Calculate and report the mean and median total number of steps taken per day
 
@@ -44,6 +44,7 @@ geom_line()  +
 xlab("5-minute interval") +
 ylab("average number of steps taken")
 ```
+![plot of chunk unnamed-chunk-1](PA1_template_files/image002.png) 
 
 #### Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -87,6 +88,7 @@ total.steps.filled <- tapply(filled.data$steps, filled.data$date,
                       FUN = sum)
 hist(total.steps.filled, xlab = "Total Steps per Day (with filled data)", breaks = 20)
 ```
+![plot of chunk unnamed-chunk-1](PA1_template_files/image003.png) 
 
 ### Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
@@ -117,3 +119,5 @@ averages <- aggregate(steps ~ interval + day, data = filled.data, mean)
 ggplot(averages, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) + 
   xlab("5-minute interval") + ylab("Number of steps")
 ```
+
+![plot of chunk unnamed-chunk-1](PA1_template_files/image004.png) 
